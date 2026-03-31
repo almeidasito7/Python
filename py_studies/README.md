@@ -3,6 +3,7 @@
 This folder is intended for study projects and Python learning practice.
 
 ## 📁 Folder Structure
+```
 py_studies/
 ├── adder_two_values.py
 ├── age_calculator.py
@@ -52,25 +53,13 @@ py_studies/
 ├── variables_test.py
 ├── voting_contributors.py
 └── while_running.py
-
+```
 
 ## 📌 About
-
-This directory contains small Python scripts focused on:
-
-- Logic building
-- Control structures (if/else, loops)
-- Functions and modularization
-- Mathematical calculations
-- Data manipulation
-
-These exercises are designed to strengthen programming fundamentals and problem-solving skills.
+This directory contains Python exercises focused on logic, control flow, functions, and basic problem-solving.
 
 ## 🚀 Purpose
-
-The goal of this repository is to:
-
-- Practice Python fundamentals
-- Improve logical reasoning
-- Build consistency in coding
-- Prepare for real-world projects and technical interviews
+* Practice Python fundamentals
+* Improve logical reasoning
+* Build consistency in coding
+* Prepare for technical interviews
