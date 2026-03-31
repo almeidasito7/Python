@@ -1,48 +1,48 @@
 import tkinter as tk
 
-class Calculadora:
+class Calculator:
     def __init__(self, root):
         self.root = root
-        self.root.title("Calculadora")
+        self.root.title("Calculator")
         self.root.geometry("300x400")
         self.root.resizable(False, False)
 
-        self.expressao = ""
+        self.expression = ""
 
-        # Tela de exibição
-        self.entrada_texto = tk.StringVar()
-        entrada = tk.Entry(root, textvariable=self.entrada_texto, font=("Arial", 24), bd=10, insertwidth=2, width=14, borderwidth=4, justify="right")
-        entrada.grid(row=0, column=0, columnspan=4)
+        # Display Layout
+        self.text_input = tk.StringVar()
+        entry_view = tk.Entry(root, textvariable=self.text_input, font=("Arial", 24), bd=10, insertwidth=2, width=14, borderwidth=4, justify="right")
+        entry_view.grid(row=0, column=0, columnspan=4)
 
-        # Layout dos botões
-        botoes = [
+        # Button Layout
+        buttons = [
             ('7',1,0), ('8',1,1), ('9',1,2), ('/',1,3),
             ('4',2,0), ('5',2,1), ('6',2,2), ('*',2,3),
             ('1',3,0), ('2',3,1), ('3',3,2), ('-',3,3),
             ('0',4,0), ('C',4,1), ('=',4,2), ('+',4,3)
         ]
 
-        for (texto, linha, coluna) in botoes:
-            self._criar_botao(texto, linha, coluna)
+        for (text, line, column) in buttons:
+            self._create_button(text, line, column)
 
-    def _criar_botao(self, texto, linha, coluna):
-        botao = tk.Button(self.root, text=texto, padx=20, pady=20, font=("Arial", 18),
-                          command=lambda: self._clicar(texto))
-        botao.grid(row=linha, column=coluna, sticky="nsew")
+    def _create_button(self, text, line, column):
+        button_use = tk.Button(self.root, text=text, padx=20, pady=20, font=("Arial", 18),
+                          command=lambda: self._click(text))
+        button_use.grid(row=line, column=column, sticky="nsew")
 
-    def _clicar(self, item):
+    def _click(self, item):
         if item == 'C':
-            self.expressao = ""
+            self.expression = ""
         elif item == '=':
             try:
-                self.expressao = str(eval(self.expressao))
+                self.expression = str(eval(self.expression))
             except Exception:
-                self.expressao = "Erro"
+                self.expression = "Error"
         else:
-            self.expressao += str(item)
-        self.entrada_texto.set(self.expressao)
+            self.expression += str(item)
+        self.text_input.set(self.expression)
 
 if __name__ == "__main__":
     root = tk.Tk()
-    app = Calculadora(root)
+    app = Calculator(root)
     root.mainloop()
